@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: GPL-2.0
+menu "DuoQin/Agenew ODM drivers"
+
+config DUOQIN_BOARD_ID_GPIO_STATE
+	tristate "DuoQin board-ID GPIO strap reader"
+	depends on GPIOLIB && OF
+	help
+	  Reads the three Agenew board-ID strap GPIOs at probe and exposes
+	  the cached levels via /sys/class/agn_gpio/gpio_dev/board_id_N.
+	  Recreation of the stock Qin F25 Pro board_id_gpio_state.ko.
+
+config DUOQIN_SENSOR_PROBE
+	tristate "MediaTek sensorhub registration kicker"
+	depends on MODULES
+	help
+	  Calls the *_probe() registration entry points of the MTK
+	  sensorhub class modules. Recreation of the stock sensor_probe.ko.
+
+config DUOQIN_ATA_TEST
+	tristate "DuoQin factory ATA pin-test helper"
+	depends on GPIOLIB && OF && PINCTRL
+	help
+	  Factory GPIO pin-test helper exposing /dev/pin_test.
+	  Recreation of the stock Qin F25 Pro ata_test.ko.
+
+endmenu

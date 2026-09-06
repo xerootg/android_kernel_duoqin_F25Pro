@@ -1,4 +1,6 @@
 [abi_symbol_list]
+  __symbol_get
+  __symbol_put
   access_process_vm
   activate_task
   add_timer
@@ -465,6 +467,7 @@
   devm_usb_get_phy
   devm_watchdog_register_device
   _dev_notice
+  dev_lstats_read
   dev_pm_domain_attach
   dev_pm_domain_attach_by_id
   dev_pm_domain_attach_by_name
@@ -1493,6 +1496,7 @@
   perf_pmu_unregister
   perf_trace_buf_alloc
   perf_trace_run_bpf_submit
+  pernet_ops_rwsem
   pfn_valid
   phy_connect
   phy_disconnect

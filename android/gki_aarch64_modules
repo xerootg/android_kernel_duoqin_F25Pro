@@ -1,0 +1,6 @@
+drivers/misc/duoqin/board_id_gpio_state.ko
+drivers/misc/duoqin/sensor_probe.ko
+drivers/misc/duoqin/ata_test.ko
+drivers/mfd/mt6397.ko
+drivers/net/dummy.ko
+drivers/rtc/rtc-mt6397.ko
