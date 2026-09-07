@@ -4,3 +4,7 @@ DEFCONFIG=mssi_64_cn_gki_defconfig
 FRAGMENT_CONFIG=${KERNEL_DIR}/arch/arm64/configs/mssi_64_cn.fragment
 PRE_DEFCONFIG_CMDS="KCONFIG_CONFIG=${ROOT_DIR}/${KERNEL_DIR}/arch/arm64/configs/${DEFCONFIG} ${ROOT_DIR}/${KERNEL_DIR}/scripts/kconfig/merge_config.sh -m -r ${ROOT_DIR}/${KERNEL_DIR}/arch/arm64/configs/gki_defconfig ${ROOT_DIR}/${FRAGMENT_CONFIG}"
 POST_DEFCONFIG_CMDS="rm ${ROOT_DIR}/${KERNEL_DIR}/arch/arm64/configs/${DEFCONFIG}"
+
+# This device's LK decompresses gzip kernels only (not lz4). Build Image.gz.
+MAKE_GOALS="${MAKE_GOALS} Image.gz"
+FILES="${FILES} arch/arm64/boot/Image.gz"
